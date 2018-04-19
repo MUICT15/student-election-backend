@@ -6,7 +6,17 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const selectParty = new Schema({
-    text: { type: String, required: true }
+    partyName:{
+      type: String,
+      required: true
+    },
+    score:{
+      type: Number,
+      default: 0
+    },
+    userSelected:{
+      type: Array
+    }
   }, {
     timestamps: true
   });
