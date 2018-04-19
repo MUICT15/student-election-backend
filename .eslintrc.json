@@ -7,7 +7,7 @@
   "parserOptions": {
     "ecmaVersion": 2017
   },
-  "extends": "airbnb",
+  "extends": "eslint:recommended",
   "rules": {
     "indent": [
       "error",
