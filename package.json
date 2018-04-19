@@ -26,9 +26,12 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit",
-    "dev":"nodemon src/"
+    "dev": "nodemon src/"
   },
   "dependencies": {
+    "@feathersjs/authentication": "^2.1.5",
+    "@feathersjs/authentication-jwt": "^2.0.0",
+    "@feathersjs/authentication-local": "^1.1.2",
     "@feathersjs/configuration": "^1.0.2",
     "@feathersjs/errors": "^3.3.0",
     "@feathersjs/express": "^1.2.2",
@@ -41,7 +44,9 @@
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^2.0.0",
     "eslint-plugin-react": "^7.7.0",
+    "feathers-mongoose": "^6.1.1",
     "helmet": "^3.12.0",
+    "mongoose": "^5.0.15",
     "serve-favicon": "^2.5.0",
     "winston": "^2.4.1"
   },
