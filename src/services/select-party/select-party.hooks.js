@@ -3,14 +3,15 @@ const checkUserSelect = require('./hook.functions');
 module.exports = {
   before: {
     all: [ 
-      // authenticate('jwt') 
-      checkUserSelect()
+      authenticate('jwt') 
     ],
     find: [],
     get: [],
     create: [],
     update: [],
-    patch: [],
+    patch: [
+      checkUserSelect()
+    ],
     remove: []
   },
 
