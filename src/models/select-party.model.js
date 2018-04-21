@@ -14,6 +14,9 @@ module.exports = function (app) {
       type: Number,
       default: 0
     },
+    qoute:{
+      type: String,
+    },
     userSelected:{
       type: Array
     }
