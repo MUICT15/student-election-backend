@@ -1,5 +1,5 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
-const checkUserSelect = require('./hook.functions');
+const {removeSomeCredential , checkBeforeSelectParty} = require('./hook.functions');
 module.exports = {
   before: {
     all: [ 
@@ -10,14 +10,16 @@ module.exports = {
     create: [],
     update: [],
     patch: [
-      checkUserSelect()
+      checkBeforeSelectParty()
     ],
     remove: []
   },
 
   after: {
     all: [],
-    find: [],
+    find: [
+      removeSomeCredential()
+    ],
     get: [],
     create: [],
     update: [],

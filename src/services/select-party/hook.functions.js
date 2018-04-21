@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const {
   NotAuthenticated
 } = require('@feathersjs/errors');
-module.exports = () => {
+module.exports.checkBeforeSelectParty = () => {
   return async (hook) => {
     if (hook.params.headers.authorization) {
       const token = hook.params.headers.authorization.replace('Bearer ', '');
@@ -30,6 +30,14 @@ module.exports = () => {
       }
     } else {
       throw new NotAuthenticated();
+    }
+  };
+};
+module.exports.removeSomeCredential = () =>{
+  return async(hook) =>{
+    for(let i = 0 ; i < hook.result.data.length ; i++){
+      hook.result.data[i].userSelected = null;
+      hook.result.data[i].score = null;
     }
   };
 };
